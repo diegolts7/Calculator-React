@@ -1,0 +1,23 @@
+.teclas {
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #efefef;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.corOperador {
+  color: orangered;
+  font-weight: bold;
+}
+.teclas:hover {
+  background-color: gainsboro;
+}
+.teclas:active {
+  background-color: grey;
+  color: #efefef;
+  border: none;
+}

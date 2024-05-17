@@ -1,0 +1,15 @@
+.visor {
+  width: 270px;
+  height: 60px;
+  align-items: center;
+  justify-content: right;
+  display: flex;
+  padding: 5px;
+  margin: 5px;
+  background-color: grey;
+  border: 1px solid aliceblue;
+  border-radius: 10px;
+  font-size: 20px;
+  letter-spacing: 3px;
+  overflow: hidden;
+}

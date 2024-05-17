@@ -1,0 +1,15 @@
+.conteinerCalculadora {
+  width: 304px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: #515151;
+  border: 2px solid aliceblue;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+}
+.conteinerCalculadora div {
+  font-weight: bold;
+  font-size: 20px;
+}
