@@ -13,7 +13,7 @@ function Calcular(numeros, operador) {
         return Number(numeros.num1) / Number(numeros.num2);
       }
     case "%":
-      return Number(numeros.num1) % Number(numeros.num2);
+      return (Number(numeros.num1) / 100) * Number(numeros.num2);
   }
 }
 

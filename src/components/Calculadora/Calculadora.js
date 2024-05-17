@@ -10,6 +10,7 @@ function Calculadora() {
   const [operacao, setOperacao] = useState([]);
   const [operadorUsado, setOperadorUsado] = useState();
   const [operacaoAtiva, setOperacaoAtiva] = useState(false);
+  const [mostrarOperacao, setMostrarOperacao] = useState();
 
   function btnClicado(e) {
     if (
@@ -24,6 +25,7 @@ function Calculadora() {
   function operadorClicado(e) {
     if (!operacaoAtiva) {
       setOperacao(text);
+      setMostrarOperacao(text + e.currentTarget.id);
       setOperadorUsado(e.currentTarget.id);
       setText("");
       setOperacaoAtiva(true);
@@ -32,6 +34,7 @@ function Calculadora() {
 
   function limparVisor() {
     setText("0");
+    setMostrarOperacao();
   }
 
   function limparUltimoNum() {
@@ -43,8 +46,9 @@ function Calculadora() {
   }
 
   function fazerOperacao() {
-    if (operacaoAtiva) {
+    if (operacaoAtiva && text !== "") {
       let calculo = Calcular({ num1: operacao, num2: text }, operadorUsado);
+      setMostrarOperacao(`${mostrarOperacao}${text}`);
       setText(`${calculo}`);
       setOperadorUsado();
       setOperacaoAtiva(false);
@@ -54,7 +58,7 @@ function Calculadora() {
 
   return (
     <div className={styles.conteinerCalculadora}>
-      <Visor texto={text} />
+      <Visor texto={text} valorOperacao={mostrarOperacao} />
       <Operadores operador="AC" event={limparVisor} />
       <Operadores operador="<-" event={limparUltimoNum} />
       <Operadores operador="%" event={operadorClicado} />
