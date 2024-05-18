@@ -34,11 +34,14 @@ function Calculadora() {
 
   function limparVisor() {
     setText("0");
+    if (!operacaoAtiva) {
+      setMostrarOperacao();
+    }
   }
 
   function limparUltimoNum() {
     if (text.slice(0, text.length - 1) === "") {
-      limparVisor();
+      setText("0");
     } else {
       setText(text.slice(0, text.length - 1));
     }
