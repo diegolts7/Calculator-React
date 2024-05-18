@@ -34,7 +34,6 @@ function Calculadora() {
 
   function limparVisor() {
     setText("0");
-    setMostrarOperacao();
   }
 
   function limparUltimoNum() {
